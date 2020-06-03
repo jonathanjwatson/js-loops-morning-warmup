@@ -9,24 +9,53 @@
     <script>
       console.log("Hello world");
 
-      var daysOfTheWeek = [
-        "Sunday",
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday",
-      ];
+      //   var daysOfTheWeek = [
+      //     "Sunday",
+      //     "Monday",
+      //     "Tuesday",
+      //     "Wednesday",
+      //     "Thursday",
+      //     "Friday",
+      //     "Saturday"
+      //   ];
 
-        var number = 0;
-        number = number + 1;
-        number = number + 1;
-        number++;
-      for (var currentIndex = 0; currentIndex < daysOfTheWeek.length; currentIndex++) {
-        console.log(currentIndex);
-        console.log(daysOfTheWeek[currentIndex]);
+      //   for (var i = 0; i < daysOfTheWeek.length; i++) {
+      //     console.log(i);
+      //     console.log(daysOfTheWeek[i]);
+      //   }
+
+      var groceryList = [];
+      var completedList = [];
+      console.log(groceryList);
+
+      var numberOfItemsToAdd = prompt(
+        "How many items do you need to add to your list?"
+      );
+
+      function addNewItem() {
+        var newItem = prompt("What do you need at the store?");
+        console.log(newItem);
+        groceryList.push(newItem);
+        console.log(groceryList);
       }
+
+      for (var i = 0; i < numberOfItemsToAdd; i++) {
+        // console.log("Another item!");
+        addNewItem();
+      }
+      //   alert(groceryList.toString());
+
+      function addItemToCart(newItem) {
+        var hasBeenPickedUp = confirm("Have you picked up: " + newItem);
+        if (hasBeenPickedUp) {
+          completedList.push(newItem);
+        }
+      }
+      for (var i = 0; i < groceryList.length; i++) {
+        addItemToCart(groceryList[i]);
+      }
+    //   addItemToCart("Pretzals");
+      console.log(completedList);
     </script>
   </body>
 </html>
